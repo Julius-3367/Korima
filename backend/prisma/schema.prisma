@@ -1,0 +1,86 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Service {
+  id                Int      @id @default(autoincrement())
+  title             String
+  category          String
+  description       String   @db.Text
+  valueProposition  String?
+  featured          Boolean  @default(false)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model Project {
+  id          Int      @id @default(autoincrement())
+  title       String
+  sector      String
+  description String   @db.Text
+  location    String?
+  impact      String?
+  imageUrl    String?
+  featured    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model BlogPost {
+  id          Int       @id @default(autoincrement())
+  title       String
+  slug        String    @unique
+  excerpt     String
+  content     String    @db.Text
+  heroImage   String?
+  author      String?   @default("Korima Team")
+  tags        Json?
+  readMinutes Int       @default(5)
+  status      String    @default("draft") // draft, published, archived
+  metaTitle   String?
+  metaDescription String?
+  views       Int       @default(0)
+  publishedAt DateTime  @default(now())
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+  createdBy   Int?      @default(1)
+  updatedBy   Int?
+
+  @@index([slug])
+  @@index([publishedAt])
+  @@index([status])
+}
+
+model Admin {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  name      String
+  role      String   @default("admin")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model NewsletterSubscriber {
+  id          Int      @id @default(autoincrement())
+  email       String   @unique
+  status      String   @default("active") // active, unsubscribed
+  subscribedAt DateTime @default(now())
+  unsubscribedAt DateTime?
+}
+
+model ContactMessage {
+  id        Int      @id @default(autoincrement())
+  fullName  String
+  email     String
+  phone     String?
+  company   String?
+  message   String   @db.Text
+  createdAt DateTime @default(now())
+}
