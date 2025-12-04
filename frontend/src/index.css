@@ -161,3 +161,258 @@ img {
   background: var(--lime-500);
   color: var(--navy-900);
 }
+
+/* ==========================================
+   FOOTER STYLES - Professional Layout
+   ========================================== */
+
+.footer {
+  background: var(--navy-900);
+  color: var(--white);
+}
+
+/* CTA Section */
+.footer__cta {
+  background: linear-gradient(135deg, var(--navy-800) 0%, var(--navy-700) 100%);
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer__cta-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer__cta-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin: 0.5rem 0 0;
+  color: var(--white);
+}
+
+.footer__cta-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Main Footer */
+.footer__main {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background: var(--navy-900);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+/* Brand Column */
+.footer__brand {
+  max-width: 350px;
+}
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.footer__company-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.footer__description {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.footer__socials a {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  color: var(--white);
+}
+
+.footer__socials a:hover {
+  background: var(--lime-500);
+  color: var(--navy-900);
+  transform: translateY(-3px);
+}
+
+/* Footer Columns */
+.footer__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 1.25rem;
+  color: var(--white);
+}
+
+.footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer__links li {
+  transition: transform 0.2s ease;
+}
+
+.footer__links a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.footer__links a:hover {
+  color: var(--lime-500);
+  transform: translateX(3px);
+}
+
+/* Contact List */
+.footer__contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer__contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer__icon {
+  font-size: 1.1rem;
+  color: var(--lime-500);
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.footer__contact a {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease;
+}
+
+.footer__contact a:hover {
+  color: var(--lime-500);
+}
+
+/* Bottom Bar */
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.75rem 0;
+  background: var(--navy-900);
+}
+
+.footer__bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer__copyright {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+.footer__legal {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.footer__legal a {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer__legal a:hover {
+  color: var(--lime-500);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .footer__brand {
+    grid-column: 1 / -1;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer__cta-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer__cta-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .footer__cta-actions .btn {
+    width: 100%;
+  }
+  
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .footer__bottom-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .footer__legal {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
