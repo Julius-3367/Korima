@@ -11,14 +11,13 @@ const Footer = () => {
         <div className="container">
           <div className="footer__cta-content">
             <div>
-              <span className="pill">Let's collaborate</span>
               <h2 className="footer__cta-title">Ready for your next launch?</h2>
             </div>
             <div className="footer__cta-actions">
               <a className="btn btn-primary" href="https://wa.me/254707670780" target="_blank" rel="noreferrer">
                 Chat on WhatsApp
               </a>
-              <a className="btn btn-outline" href="mailto:korirjuliu001@gmail.com">
+              <a className="btn btn-primary" href="mailto:korirjuliu001@gmail.com">
                 korirjuliu001@gmail.com
               </a>
             </div>
@@ -33,11 +32,11 @@ const Footer = () => {
             {/* Company Info */}
             <div className="footer__brand">
               <div className="footer__logo">
-                <img src="/logo.svg" alt="Korima" width={50} height={50} />
-                <span className="footer__company-name">Korima</span>
+                <img src="/logo.svg" alt="Korima Technologies" width={50} height={50} />
+                <span className="footer__company-name">Korima Technologies</span>
               </div>
               <p className="footer__description">
-                Korima engineers human software, mobile experiences, and growth programs for African enterprises.
+                Korima Technologies engineers human software, mobile experiences, and growth programs for African enterprises.
               </p>
               <div className="footer__socials">
                 <a href="https://linkedin.com/company/korima" aria-label="LinkedIn" target="_blank" rel="noreferrer">

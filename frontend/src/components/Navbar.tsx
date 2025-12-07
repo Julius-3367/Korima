@@ -32,10 +32,9 @@ const Navbar = () => {
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <nav className="navbar__inner">
         <Link to="/" className="navbar__brand">
-          <img src="/logo.svg" alt="Korima" width={44} height={44} />
+          <img src="/logo.svg" alt="Korima Technologies" width={44} height={44} />
           <div>
-            <span>Korima</span>
-            <small>Software & Digital Lab</small>
+            <span>Korima Technologies</span>
           </div>
         </Link>
 
@@ -50,9 +49,9 @@ const Navbar = () => {
               {link.label}
             </NavLink>
           ))}
-          <a className="btn btn-primary nav-cta" href="mailto:korirjuliu001@gmail.com">
-            Email Us
-          </a>
+          <Link to="/contact" className="btn btn-primary nav-cta">
+            Get Started →
+          </Link>
         </div>
 
         <button className="nav-toggle" aria-label="Toggle navigation" onClick={() => setOpen((prev) => !prev)}>
