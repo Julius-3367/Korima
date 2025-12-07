@@ -29,32 +29,38 @@ const Navbar = () => {
   }, [open]);
 
   return (
-    <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
-      <nav className="navbar__inner">
-        <Link to="/" className="navbar__brand">
-          <img src="/logo.svg" alt="Korima Technologies" width={44} height={44} />
+    <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`} role="banner">
+      <nav className="navbar__inner" aria-label="Main navigation">
+        <Link to="/" className="navbar__brand" aria-label="Korima Technologies Home">
+          <img src="/logo.svg" alt="Korima Technologies Logo" width={44} height={44} />
           <div>
             <span>Korima Technologies</span>
           </div>
         </Link>
 
-        <div className={`nav-links ${open ? 'nav-links--open' : ''}`}>
+        <div className={`nav-links ${open ? 'nav-links--open' : ''}`} role="navigation">
           {links.map((link) => (
             <NavLink
               key={link.path}
               to={link.path}
               onClick={() => setOpen(false)}
               className={({ isActive }) => (isActive ? 'nav-link nav-link--active' : 'nav-link')}
+              aria-current={({ isActive }: { isActive: boolean }) => (isActive ? 'page' : undefined)}
             >
               {link.label}
             </NavLink>
           ))}
-          <Link to="/contact" className="btn btn-primary nav-cta">
+          <Link to="/contact" className="btn btn-primary nav-cta" aria-label="Get started with Korima Technologies">
             Get Started →
           </Link>
         </div>
 
-        <button className="nav-toggle" aria-label="Toggle navigation" onClick={() => setOpen((prev) => !prev)}>
+        <button 
+          className="nav-toggle" 
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={open}
+          onClick={() => setOpen((prev) => !prev)}
+        >
           {open ? <FiX size={26} /> : <FiMenu size={26} />}
         </button>
       </nav>

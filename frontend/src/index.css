@@ -1,16 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap');
 
 :root {
+  /* Primary Colors */
   --navy-900: #050b16;
   --navy-800: #07122a;
   --navy-700: #0f1f3c;
   --lime-400: #b3ff4d;
   --lime-500: #9be22d;
+  
+  /* Vibrant Accent Colors */
+  --purple-500: #8b5cf6;
+  --purple-600: #7c3aed;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --orange-500: #f97316;
+  --orange-600: #ea580c;
+  --pink-500: #ec4899;
+  --pink-600: #db2777;
+  --cyan-500: #06b6d4;
+  --cyan-600: #0891b2;
+  --yellow-500: #eab308;
+  --yellow-600: #ca8a04;
+  
+  /* Neutrals */
   --stone-50: #f3f6fb;
+  --stone-100: #e7eaf3;
   --stone-500: #6f778c;
   --stone-700: #2f3547;
   --white: #ffffff;
   --border: rgba(5, 11, 22, 0.08);
+  
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: var(--navy-900);
   background-color: var(--white);
@@ -48,6 +67,27 @@ main {
   animation: pageEnter 0.4s ease-out;
 }
 
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--lime-500);
+  color: var(--navy-900);
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 0 0 8px 0;
+  z-index: 200;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--purple-500);
+  outline-offset: 3px;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -74,7 +114,8 @@ img {
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--navy-900);
-  background: rgba(155, 226, 45, 0.18);
+  background: linear-gradient(135deg, rgba(155, 226, 45, 0.2) 0%, rgba(59, 130, 246, 0.15) 100%);
+  border: 1px solid rgba(155, 226, 45, 0.3);
   border-radius: 999px;
   padding: 0.35rem 1rem;
 }

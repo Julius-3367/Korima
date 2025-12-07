@@ -21,8 +21,13 @@ import './App.css';
 function App() {
   return (
     <div className="app-shell">
+      {/* Skip to main content link for accessibility */}
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
+      
       <Navbar />
-      <div className="page-shell">
+      <div className="page-shell" id="main-content" role="main">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
